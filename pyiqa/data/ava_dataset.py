@@ -12,7 +12,6 @@ import torchvision.transforms as tf
 
 from pyiqa.data.transforms import transform_mapping
 from pyiqa.utils.registry import DATASET_REGISTRY
-import pandas as pd
 
 # avoid possible image read error in AVA dataset 
 from PIL import ImageFile
@@ -33,6 +32,8 @@ class AVADataset(data.Dataset):
 
     def __init__(self, opt):
         super(AVADataset, self).__init__()
+        import pandas as pd
+
         self.opt = opt
 
         target_img_folder = opt['dataroot_target']

@@ -13,9 +13,6 @@ from pyiqa.data.transforms import transform_mapping, augment, PairedToTensor
 from pyiqa.utils import FileClient, imfrombytes, img2tensor
 from pyiqa.utils.registry import DATASET_REGISTRY
 
-import pandas as pd
-
-
 @DATASET_REGISTRY.register()
 class PieAPPDataset(data.Dataset):
     """The PieAPP Dataset introduced by:
@@ -32,6 +29,8 @@ class PieAPPDataset(data.Dataset):
 
     def __init__(self, opt):
         super(PieAPPDataset, self).__init__()
+        import pandas as pd
+
         self.opt = opt
 
         target_img_folder = opt['dataroot_target']

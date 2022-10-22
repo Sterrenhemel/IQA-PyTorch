@@ -4,7 +4,6 @@ import random
 import numpy
 import pickle
 import csv
-import pandas as pd
 from tqdm import tqdm
 """
     The FLIVE dataset introduced by:
@@ -29,6 +28,8 @@ from tqdm import tqdm
 
 
 def get_meta_info():
+    import pandas as pd
+
     patch_label_file = '../../PaQ-2-PiQ/database/labels_patch.csv'
     img_label_file = '../../PaQ-2-PiQ/database/labels_image.csv'
 

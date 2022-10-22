@@ -79,11 +79,36 @@ def get_requirements(filename='requirements.txt'):
         requires = [line.replace('\n', '') for line in f.readlines()]
     return requires
 
+REQUIRED_PKGS = [
+    "addict",
+    "future",
+    "numpy",
+    "opencv-python-headless",
+    "torch>=1.9",
+    "torchvision>=0.9",
+    "Pillow",
+    "pyyaml",
+    "requests",
+    "scipy",
+    "timm",
+    "tqdm",
+    "yapf",
+    "einops"
+]
+
+EXTRAS_REQUIRE = {
+    "train": [
+        "lmdb",
+        "pandas",
+        "imgaug"
+    ],
+}
+
 
 if __name__ == '__main__':
     write_version_py()
     setup(
-        name='pyiqa',
+        name='v-pyiqa',
         version=get_version(),
         description='PyTorch Toolbox for Image Quality Assessment',
         long_description=readme(),
@@ -111,6 +136,7 @@ if __name__ == '__main__':
             'Topic :: Scientific/Engineering',
             'Topic :: Scientific/Engineering :: Image Processing',
         ],
-        install_requires=get_requirements(),
+        install_requires=REQUIRED_PKGS,
+        extras_require=EXTRAS_REQUIRE,
         python_requires='>=3.6',
     )

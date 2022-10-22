@@ -13,9 +13,6 @@ from pyiqa.data.transforms import transform_mapping, augment, PairedToTensor
 from pyiqa.utils import FileClient, imfrombytes, img2tensor
 from pyiqa.utils.registry import DATASET_REGISTRY
 
-import pandas as pd
-
-
 @DATASET_REGISTRY.register()
 class BAPPSDataset(data.Dataset):
     """The BAPPS Dataset introduced by:
@@ -35,6 +32,8 @@ class BAPPSDataset(data.Dataset):
 
     def __init__(self, opt):
         super(BAPPSDataset, self).__init__()
+
+        import pandas as pd
         self.opt = opt
 
         if opt.get('override_phase', None) is None:

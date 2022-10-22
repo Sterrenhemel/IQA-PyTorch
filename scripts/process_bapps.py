@@ -4,7 +4,6 @@ import random
 import numpy as np
 import pickle
 import csv
-import pandas as pd
 from tqdm import tqdm
 from glob import glob
 

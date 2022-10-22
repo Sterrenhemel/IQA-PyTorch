@@ -4,7 +4,6 @@ import random
 import numpy
 import pickle
 import csv
-import pandas as pd
 
 
 def get_meta_info():
@@ -38,6 +37,8 @@ def get_meta_info():
 
 
 def get_random_splits(seed=123):
+    import pandas as pd
+
     random.seed(seed)
     meta_info_file = './datasets/meta_info/meta_info_LIVEMDDataset.csv'
     save_path = f'./datasets/meta_info/livemd_{seed}.pkl'

@@ -4,7 +4,6 @@ import random
 import numpy
 import pickle
 import csv
-import pandas as pd
 
 
 def get_meta_info():
@@ -28,6 +27,7 @@ def get_random_splits(seed=123):
     meta_info_file = './datasets/meta_info/meta_info_CSIQDataset.csv'
     save_path = f'./datasets/meta_info/csiq_{seed}.pkl'
     ratio = 0.8
+    import pandas as pd
 
     meta_info = pd.read_csv(meta_info_file)
 

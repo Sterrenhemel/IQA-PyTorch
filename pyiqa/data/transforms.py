@@ -4,7 +4,6 @@ import functools
 from typing import Union
 from PIL import Image
 from collections.abc import Sequence
-from imgaug import augmenters as iaa
 import numpy as np
 
 import torch
@@ -69,6 +68,7 @@ class PairedToTensor(tf.ToTensor):
 class ChangeColorSpace:
     """Pair version of center crop"""
     def __init__(self, to_colorspace):
+        from imgaug import augmenters as iaa
         self.aug_op = iaa.color.ChangeColorspace(to_colorspace)
 
     def __call__(self, imgs):
