@@ -51,10 +51,25 @@ DEFAULT_CONFIGS = OrderedDict({
         },
         'metric_mode': 'FR',
     },
+    'ssimc': {
+        'metric_opts': {
+            'type': 'SSIM',
+            'downsample': False,
+            'test_y_channel': False,
+        },
+        'metric_mode': 'FR',
+    },
     'psnr': {
         'metric_opts': {
             'type': 'PSNR',
             'test_y_channel': False,
+        },
+        'metric_mode': 'FR',
+    },
+    'psnry': {
+        'metric_opts': {
+            'type': 'PSNR',
+            'test_y_channel': True,
         },
         'metric_mode': 'FR',
     },
@@ -158,6 +173,13 @@ DEFAULT_CONFIGS = OrderedDict({
         'metric_mode': 'NR',
         'lower_better': True,
     },
+    'cnniqa': {
+        'metric_opts': {
+            'type': 'CNNIQA',
+            'pretrained': 'koniq10k'
+        },
+        'metric_mode': 'NR',
+    },
     'musiq': {
         'metric_opts': {
             'type': 'MUSIQ',
@@ -196,7 +218,16 @@ DEFAULT_CONFIGS = OrderedDict({
     'nima': {
         'metric_opts': {
             'type': 'NIMA',
-            'pretrained': 'ava'
+            'pretrained': 'ava',
+            'base_model_name': 'inception_resnet_v2',
+        },
+        'metric_mode': 'NR',
+    },
+    'nima-vgg16-ava': {
+        'metric_opts': {
+            'type': 'NIMA',
+            'pretrained': 'ava',
+            'base_model_name': 'vgg16',
         },
         'metric_mode': 'NR',
     },
